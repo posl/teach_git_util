@@ -1,0 +1,14 @@
+
+# env files
+.DS_Store
+*.swp
+*.pyc
+__pycache__
+.venv/
+Pipfile
+Pipfile.lock
+docker-env.zip
+gumtree-2.1.2
+gumtree.zip
+.vscode
+
