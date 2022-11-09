@@ -256,16 +256,22 @@ def get_author(dirname, commit_hash):
 
 
 if __name__=="__main__":
-    repodir = '/Users/masanarikondo/paper/2020-PRvsROC'
+    # repodir = '/Users/masanarikondo/paper/2020-PRvsROC'
 
-    print('bf7ce271a10d840a364b5a356a07b9ce93cf386e: author date')
-    print(get_hashlist_with_author_date(repodir)['bf7ce271a10d840a364b5a356a07b9ce93cf386e'])
+    # print('bf7ce271a10d840a364b5a356a07b9ce93cf386e: author date')
+    # print(get_hashlist_with_author_date(repodir)['bf7ce271a10d840a364b5a356a07b9ce93cf386e'])
 
-    print('num stat: bf7ce271a10d840a364b5a356a07b9ce93cf386e')
-    print(get_numstat(repodir, 'bf7ce271a10d840a364b5a356a07b9ce93cf386e'))
-    print('num stat: c498e144681dc817b3056f7d968fe3642c23ef9b')
-    print(get_numstat(repodir, 'c498e144681dc817b3056f7d968fe3642c23ef9b'))
+    # print('num stat: bf7ce271a10d840a364b5a356a07b9ce93cf386e')
+    # print(get_numstat(repodir, 'bf7ce271a10d840a364b5a356a07b9ce93cf386e'))
+    # print('num stat: c498e144681dc817b3056f7d968fe3642c23ef9b')
+    # print(get_numstat(repodir, 'c498e144681dc817b3056f7d968fe3642c23ef9b'))
 
 
-    print('git show: c498e144681dc817b3056f7d968fe3642c23ef9b')
-    print(git_show(repodir, 'c498e144681dc817b3056f7d968fe3642c23ef9b'))
+    # print('git show: c498e144681dc817b3056f7d968fe3642c23ef9b')
+    # print(git_show(repodir, 'c498e144681dc817b3056f7d968fe3642c23ef9b'))
+
+    repodir = '/Users/masanarikondo/paper/2022-dev-communication'
+    # f_path = './docs/intro.md'
+    f_path='./sections/introduction.tex'
+    c = get_file_diff(repodir, f_path)
+    print(c)
