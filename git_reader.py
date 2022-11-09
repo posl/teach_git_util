@@ -4,6 +4,13 @@ import sys
 import re
 from datetime import datetime as dt
 
+def get_num_file_changes(repodir, f_path):
+    hash_list = subprocess.check_output(
+            ['git', '-C', '{}'.format(repodir), 'log', '--format=%H', '--', '{0}'.format(f_path)],
+            universal_newlines=True
+            ).splitlines()
+    return len(hash_list)
+
 def get_file_diff(repodir, f_path):
     content = subprocess.check_output(
             ['git', '-C', '{}'.format(repodir), 'log', '-p', '--', '{0}'.format(f_path)],
@@ -271,7 +278,8 @@ if __name__=="__main__":
     # print(git_show(repodir, 'c498e144681dc817b3056f7d968fe3642c23ef9b'))
 
     repodir = '/Users/masanarikondo/paper/2022-dev-communication'
-    # f_path = './docs/intro.md'
-    f_path='./sections/introduction.tex'
+    f_path = './docs/intro.md'
+    #f_path='./sections/introduction.tex'
     c = get_file_diff(repodir, f_path)
     print(c)
+    print(get_num_file_changes(repodir, f_path))
