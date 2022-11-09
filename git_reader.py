@@ -4,6 +4,13 @@ import sys
 import re
 from datetime import datetime as dt
 
+def get_file_diff(repodir, f_path):
+    content = subprocess.check_output(
+            ['git', '-C', '{}'.format(repodir), 'log', '-p', '--', '{0}'.format(f_path)],
+            universal_newlines=True
+            )
+    return content
+
 """
 Get commit hash list (following time flow)
 """
